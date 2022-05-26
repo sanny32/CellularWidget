@@ -17,7 +17,6 @@ import android.widget.RemoteViews;
  */
 public class CellularWidget extends AppWidgetProvider {
     private static final String OnClick = "OnClickTag";
-    private static final int APP_WIDGET_UPDATE_JOB_ID = 100000073;
 
     /**
      * Return id of network logo image
@@ -53,7 +52,7 @@ public class CellularWidget extends AppWidgetProvider {
         if (OnClick.equals(intent.getAction())) {
 
             updateWidget(context);
-            scheduleJob(context);
+            //CellularWidgetUpdateService.startJobService(context);
 
             Intent intentActionMain = new Intent(Intent.ACTION_MAIN);
             intentActionMain.setComponent(new ComponentName("com.android.phone",
@@ -66,33 +65,8 @@ public class CellularWidget extends AppWidgetProvider {
     @Override
     public void onEnabled(Context context) {
         super.onEnabled(context);
-        scheduleJob(context);
+        CellularWidgetUpdateService.startJobService(context);
     }
-
-    /**
-     * Schedule job from the context to update the widget on preferred_network_mode2 changed
-     * @param context
-     */
-    private void scheduleJob(Context context)
-    {
-        ComponentName componentName = new ComponentName(context, CellularWidgetUpdateService.class);
-        JobInfo.TriggerContentUri triggerContentUri = new JobInfo.TriggerContentUri(
-                Settings.Global.getUriFor("preferred_network_mode2"),
-                JobInfo.TriggerContentUri.FLAG_NOTIFY_FOR_DESCENDANTS);
-
-        JobInfo jobInfo  = new JobInfo.Builder(APP_WIDGET_UPDATE_JOB_ID, componentName)
-                .addTriggerContentUri(triggerContentUri)
-                .setTriggerContentUpdateDelay(1)
-                .setTriggerContentMaxDelay(100)
-                .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
-                .build();
-
-        JobScheduler jobScheduler = (JobScheduler)
-                context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
-
-        jobScheduler.schedule(jobInfo);
-    }
-
 
     /**
      * Update widget from the context
@@ -133,11 +107,7 @@ public class CellularWidget extends AppWidgetProvider {
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidgetComponentName);
 
         if (appWidgetIds.length == 0) {
-
-            JobScheduler jobScheduler = (JobScheduler)
-                    context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
-
-            jobScheduler.cancel(APP_WIDGET_UPDATE_JOB_ID);
+            CellularWidgetUpdateService.stopJobService(context);
         }
     }
 

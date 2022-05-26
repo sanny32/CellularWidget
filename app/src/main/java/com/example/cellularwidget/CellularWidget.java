@@ -50,9 +50,7 @@ public class CellularWidget extends AppWidgetProvider {
         super.onReceive(context, intent);
 
         if (OnClick.equals(intent.getAction())) {
-
             updateWidget(context);
-            //CellularWidgetUpdateService.startJobService(context);
 
             Intent intentActionMain = new Intent(Intent.ACTION_MAIN);
             intentActionMain.setComponent(new ComponentName("com.android.phone",

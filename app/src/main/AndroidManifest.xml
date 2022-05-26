@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.cellularwidget">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_logo_network"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_logo_network"
+        android:supportsRtl="true"
+        android:targetSdkVersion="30"
+        android:theme="@android:style/Theme.DeviceDefault"
+        tools:targetApi="30">
+
+        <service
+            android:name=".CellularWidgetUpdateService"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <!--<activity
+            android:name=".CellularWidgetSettingsActivity"
+            android:exported="true"
+            android:label="@string/app_name" />-->
+
+        <receiver
+            android:name=".CellularWidget"
+            android:exported="true"
+            android:icon="@drawable/ic_logo_network"
+            android:label="@string/widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_metadata" />
+        </receiver>
+    </application>
+
+</manifest>

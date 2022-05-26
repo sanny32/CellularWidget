@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CellularWidget</string>
+    <string name="widget_name">Сотовая сеть</string>
+    <string name="widget_text">Тип сети</string>
+</resources>

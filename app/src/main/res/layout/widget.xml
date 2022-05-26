@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="top|center"
+    android:orientation="vertical"
+    android:showDividers="middle"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/logo_network"
+        android:background="@drawable/app_widget_background"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:padding="8dp"
+        android:layout_marginBottom="@dimen/shortcut_menu_transparent_space_height"
+        android:contentDescription="@string/app_name"
+        android:elevation="@dimen/shortcut_menu_elevation"
+        android:src="@drawable/ic_logo_network" />
+
+    <TextView
+        android:id="@+id/appwidget_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="@string/widget_text"
+        android:textAlignment="center"
+        android:textColor="#ffffffff"
+        android:textSize="@dimen/secondary_text_size"/>
+
+</LinearLayout >

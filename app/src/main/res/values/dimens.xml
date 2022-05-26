@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_shortcut_menu_item_height">61.8dp</dimen>
+    <dimen name="app_shortcut_menu_item_width">218.2dp</dimen>
+    <dimen name="shortcut_menu_angle_radius">13.1dp</dimen>
+    <dimen name="shortcut_menu_shadow_padding">10dp</dimen>
+    <dimen name="shortcut_menu_elevation">5dp</dimen>
+    <dimen name="shortcut_menu_transparent_space_height">4.1dp</dimen>
+    <dimen name="system_shortcut_menu_width">@dimen/app_shortcut_menu_item_width</dimen>
+    <dimen name="secondary_text_size">12sp</dimen>
+</resources>

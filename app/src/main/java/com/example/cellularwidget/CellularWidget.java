@@ -20,8 +20,8 @@ public class CellularWidget extends AppWidgetProvider {
 
     /**
      * Return id of network logo image
-     * @param context
-     * @return
+     * @param context - the application context
+     * @return resource icon id of network logo
      */
     private int getLogoNetworkImage(Context context) {
         try {
@@ -70,7 +70,7 @@ public class CellularWidget extends AppWidgetProvider {
 
     /**
      * Update widget from the context
-     * @param context
+     * @param context - the application context
      */
     private void updateWidget(Context context)
     {
@@ -113,9 +113,9 @@ public class CellularWidget extends AppWidgetProvider {
 
     /**
      * Returns PendingIntent for the action from the context
-     * @param context
-     * @param action
-     * @return
+     * @param context - the application context
+     * @param action - name of widget action
+     * @return PendingIntent object
      */
     protected PendingIntent getPendingSelfIntent(Context context, String action) {
         Intent intent = new Intent(context, getClass());

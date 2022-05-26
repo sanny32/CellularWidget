@@ -23,7 +23,7 @@ public class CellularWidgetUpdateService extends JobService {
 
     /**
      * Start job service from the context
-     * @param context
+     * @param context - the application context
      */
     public static void startJobService(Context context) {
         Log.d(TAG, "JobService init");
@@ -53,7 +53,7 @@ public class CellularWidgetUpdateService extends JobService {
 
     /**
      * Stop job service from the context
-     * @param context
+     * @param context - the application context
      */
     public static void stopJobService(Context context) {
         Log.d(TAG, "JobService cancel");

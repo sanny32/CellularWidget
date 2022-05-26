@@ -7,5 +7,5 @@
     <dimen name="shortcut_menu_elevation">5dp</dimen>
     <dimen name="shortcut_menu_transparent_space_height">4.1dp</dimen>
     <dimen name="system_shortcut_menu_width">@dimen/app_shortcut_menu_item_width</dimen>
-    <dimen name="secondary_text_size">12sp</dimen>
+    <dimen name="secondary_text_size">12.2sp</dimen>
 </resources>

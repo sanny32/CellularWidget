@@ -63,6 +63,8 @@ public class CellularWidget extends AppWidgetProvider {
     @Override
     public void onEnabled(Context context) {
         super.onEnabled(context);
+
+        updateWidget(context);
         CellularWidgetUpdateService.startJobService(context);
     }
 
